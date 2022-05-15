@@ -7,7 +7,7 @@ export const LayoutWrapper = styled.div`
 `;
 
 export const MainWrapper = styled.div`
-  max-width: 1440px;
+  max-width: 1000px;
   padding: 60px 0 160px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -24,7 +24,7 @@ export const Header = styled.header`
 `;
 
 export const Nav = styled.nav`
-  max-width: 1440px;
+  max-width: 1000px;
   height: 60px;
   margin: 0 auto;
 `;
