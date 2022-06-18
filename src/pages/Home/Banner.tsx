@@ -8,7 +8,7 @@ const bannerList = [
   'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/4k2022.png',
   'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/7k2022.png',
   'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/2021.png',
-  'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/2020.png',
+  'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/2020.jpg',
   'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/2019.jpg',
 ];
 

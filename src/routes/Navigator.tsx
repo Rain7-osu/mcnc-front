@@ -7,7 +7,7 @@ export const Navigator = () => {
       <Nav>
         <NavList>
           <NavItem>
-            <NavLink to="/home">Crz 官网</NavLink>
+            <NavLink to="/home">MCNC 官网</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to="/competition/current">本期赛事</NavLink>

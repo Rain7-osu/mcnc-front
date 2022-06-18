@@ -2,15 +2,18 @@ import { useState } from 'react';
 import { useBoolean, useInfiniteScroll, useRequest } from 'ahooks';
 import { Button, Snackbar } from '@mui/material';
 import { REGISTER_LINK } from '../../common/constants';
+import { ConfigKeys } from '../../common/config-keys';
 import { openTab } from '../../utils/open-tab';
+import { useSwitchConfig } from '../../hooks/useConfig';
 import { getVideoLink } from '../../services/requests/get-video-link';
-import { Banner } from './Banner';
 import { VideoList } from './VideoList';
+import { Banner } from './Banner';
 import { HomePage } from './styles';
 
 export function Home() {
   const [open, { setTrue, setFalse }] = useBoolean();
   const [message, setMessage] = useState('');
+  const enableRegister = useSwitchConfig(ConfigKeys.ENABLE_REGISTERING);
 
   const { data } = useRequest(
     getVideoLink,
@@ -64,17 +67,19 @@ export function Home() {
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
       />
       <Banner />
-      <Button
-        className="register-button"
-        disableElevation
-        variant="contained"
-        size="medium"
-        onClick={() => {
-          openTab(REGISTER_LINK);
-        }}
-      >
-        报名链接
-      </Button>
+      {enableRegister && (
+        <Button
+          className="register-button"
+          disableElevation
+          variant="contained"
+          size="medium"
+          onClick={() => {
+            openTab(REGISTER_LINK);
+          }}
+        >
+          报名链接
+        </Button>
+      )}
       <div className="recent-video">近期视频</div>
       {list && <VideoList videos={list?.list} />}
       {noMore

@@ -1,3 +1,3 @@
 export enum ConfigKeys {
-  DEFAULT_CONFIG = 'default_config',
+  ENABLE_REGISTERING = 'enable_registering',
 }

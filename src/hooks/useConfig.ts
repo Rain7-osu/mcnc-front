@@ -1,5 +1,5 @@
 import { ConfigKeys } from '../common/config-keys';
-import { useSelector } from '../common/dvaHooks';
+import { useAction, useSelector } from '../common/dvaHooks';
 
 export const useConfig = <T = string>(key: ConfigKeys, format?: (value: string) => T): T => {
   const config = useSelector(({ global }) => global.config);
@@ -7,7 +7,11 @@ export const useConfig = <T = string>(key: ConfigKeys, format?: (value: string) 
   return format?.(preValue) || preValue;
 };
 
-export const useSwitchConfig = (grayKey: ConfigKeys): boolean => {
-  const config = useConfig(grayKey);
+export const useSwitchConfig = (switchKey: ConfigKeys): boolean => {
+  const config = useConfig(switchKey);
   return 'true' === config;
+};
+
+export const useSetConfig = () => {
+  return useAction<Partial<Record<ConfigKeys, any>>>('global/setConfig');
 };
