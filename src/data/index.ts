@@ -1,2 +1,13 @@
-// 在这里定义一些接口的声明
-export {};
+export interface Sheet {
+  title: string;
+  url: string;
+  key: number;
+}
+
+export interface Document {
+  title: string;
+  sheets: Sheet[];
+  key: number;
+}
+
+export type SheetDocuments = Document[];

@@ -50,4 +50,56 @@ export const HomePage = styled.div`
       background-color: #302e38;
     }
   }
+
+  .load-more-button {
+    margin-top: 80px;
+    color: #c2b8e0;
+    background-color: #302e38;
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    font-size: 22px;
+    font-family: var(--osu-default-font);
+
+    &:hover {
+      color: #ffffff;
+      background-color: #302e38;
+    }
+  }
+  
+  .recent-video {
+    color: #fff;
+    font-size: 24px;
+    margin: 80px 0 20px;
+  }
+  
+  .video-list {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    
+    .video-item {
+      align-items: center;
+      
+      /* 设置宽高比例 */
+      width: 100%;
+      position: relative;
+      height: 0;
+      padding-bottom: 56%;
+      margin: 20px 0;
+      
+      iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
 `;

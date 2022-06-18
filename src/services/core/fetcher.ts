@@ -30,7 +30,7 @@ const httpRequestInterceptorFactory = () => {
 
 const httpResponseInterceptorFactory = () => {
   const onFulfilled: ResponseOnFulfilled = (res) => {
-    return res ? res.data : res;
+    return res;
   };
 
   const onRejected: ResponseOnRejected = (err) => {

@@ -20,6 +20,7 @@ const ignoreWords = [
   'debounced',
   'cls',
   'Raf',
+  'Snackbar',
 ];
 
 module.exports = {

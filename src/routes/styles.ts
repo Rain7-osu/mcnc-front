@@ -56,7 +56,7 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 64px;
+  height: 72px;
   background-color: #24222a;
   
   .footer-team {
@@ -73,5 +73,10 @@ export const FooterWrapper = styled.footer`
       color: #948fa3;
       font-weight: bold;
     }
+  }
+  
+  .icp {
+    margin: 10px 0 5px;
+    font-size: 10px;
   }
 `;

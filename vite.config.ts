@@ -19,5 +19,11 @@ export default defineConfig({
   },
   server: {
     port: 10586,
+    proxy: {
+      '/api': {
+        target: 'https://mcnc.crzteam.cn/',
+        changeOrigin: true,
+      }
+    }
   }
 });

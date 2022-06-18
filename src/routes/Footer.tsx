@@ -14,6 +14,9 @@ export const Footer = () => {
         <a href="https://space.bilibili.com/11689809" target="_blank" rel="noreferrer">Kuit</a>&nbsp;
         <a href="https://osu.ppy.sh/users/7304075" target="_blank" rel="noreferrer">(osu id: Kuiiiiteeee)</a>&nbsp;
       </div>
+      <div className="icp">
+        浙ICP备2021036334号-2
+      </div>
     </FooterWrapper>
   );
 };

@@ -11,8 +11,7 @@ export interface IHeaders {
 }
 
 export interface IResponse<T> {
-  flag: boolean;
-  code: number;
-  message: string;
+  error_message: string;
+  status: 'OK';
   data: T;
 }

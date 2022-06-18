@@ -1,20 +1,15 @@
 import { useState } from 'react';
 import { useRafInterval } from 'ahooks';
 import cls from 'classnames';
-import banner1 from '../../assets/7k2022.png';
-import banner2 from '../../assets/4k2022.png';
-import banner3 from '../../assets/2019.jpg';
-import banner4 from '../../assets/2020.jpg';
-import banner5 from '../../assets/2021.png';
 import { BANNER_INTERVAL } from '../../common/constants';
 import { BannerWrapper } from './styles';
 
 const bannerList = [
-  banner1,
-  banner2,
-  banner3,
-  banner4,
-  banner5,
+  'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/4k2022.png',
+  'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/7k2022.png',
+  'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/2021.png',
+  'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/2020.png',
+  'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/2019.png',
 ];
 
 export const Banner = () => {

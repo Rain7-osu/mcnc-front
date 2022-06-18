@@ -1,55 +1,68 @@
-import type { AxiosRequestConfig } from 'axios';
+import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 import type { IResponse } from './types';
 import { httpFactory } from './fetcher';
 
 export const http = httpFactory();
 
-export const transformResponse = <T = any> (res: IResponse<T>, message?: string): T => {
-  if (1 === res?.code) {
-    return res?.data || {} as any;
+export const transformResponse = <T = any> (axiosResponse: AxiosResponse<IResponse<T>>): T => {
+  if (axiosResponse.status >= 200 && axiosResponse.status < 300) {
+    const res = axiosResponse.data;
+    const err = axiosResponse as unknown as Error;
+
+    if (res?.status === 'OK') {
+      return res?.data || {} as any;
+    }
+
+    throw res.error_message || err || 'Unknown Error';
+  } else {
+    throw `${axiosResponse.status}: ${axiosResponse.statusText}`;
   }
-
-  throw res?.message || message;
 };
 
-const del = async <T>(url: string, data?: any, config?: AxiosRequestConfig) => {
-  const res = await http.delete(
+
+const del = async <T = any>(url: string, data?: any, config?: AxiosRequestConfig) => {
+  return await http.delete<AxiosResponse<IResponse<T>>>(
     url,
     config,
   );
-  return transformResponse<T>(res);
 };
 
-const post = async <T>(url: string, data: any, config?: AxiosRequestConfig) => {
-  const res = await http.post(
+const post = async <T = any>(url: string, data: any, config?: AxiosRequestConfig) => {
+  return await http.post<AxiosResponse<IResponse<T>>>(
     url,
     data,
     config,
   );
-  return transformResponse<T>(res);
 };
 
-const get = async <T>(url: string, config?: AxiosRequestConfig) => {
-  const res = await http.get(
+const get = async <T = any>(url: string, config?: AxiosRequestConfig) => {
+  return await http.get<AxiosResponse<IResponse<T>>>(
     url,
     config,
   );
-  return transformResponse<T>(res);
 };
 
-const patch = async <T>(url: string, data: any, config?: AxiosRequestConfig) => {
-  const res = await http.patch(
+const patch = async <T = any>(url: string, data: any, config?: AxiosRequestConfig) => {
+  return await http.patch<AxiosResponse<IResponse<T>>>(
     url,
     data,
     config,
   );
-  return transformResponse<T>(res);
+};
+
+const put = async <T = any>(url: string, data: any, config?: AxiosRequestConfig) => {
+  return await http.put<AxiosResponse<IResponse<T>>>(
+    url,
+    data,
+    config,
+  );
 };
 
 export const request = {
-  del,
+  delete: del,
   post,
   get,
   patch,
+  put,
 };
 
