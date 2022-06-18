@@ -1,6 +1,6 @@
 {
   "name": "mcnc-front",
-  "version": "0.9.0",
+  "version": "0.11.2",
   "scripts": {
     "prepare": "npx husky install",
     "reinstall": "rm -rf node_modules && pnpm i",
