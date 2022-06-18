@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { Snackbar } from '@mui/material';
-import { getGoogleSheetDocuments } from '../../services/requests/get-google-sheet-documents';
+import { getCurrentGoogleSheets } from '../../services/requests/get-google-sheet-documents';
 import { DocumentList } from '../../components/DocumentList';
 import { Page } from './styles';
 
 export const CurrentCompetition = () => {
   const [open, { setTrue, setFalse }] = useBoolean();
   const [message, setMessage] = useState('');
-  const { data: sheetDocuments } = useRequest(
-    getGoogleSheetDocuments,
+  const { data } = useRequest(
+    getCurrentGoogleSheets,
     {
       onError(err) {
         setTrue();
@@ -28,7 +28,7 @@ export const CurrentCompetition = () => {
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
       />
       <div className="page-title">本期赛事</div>
-      <DocumentList data={sheetDocuments || []} />
+      <DocumentList data={data ?? []} />
     </Page>
   );
 };

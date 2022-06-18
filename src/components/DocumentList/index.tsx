@@ -1,9 +1,35 @@
-import { SheetDocuments } from '../../data';
-import { DocumentListContainer, DocumentItem } from './styles';
+import { Sheet, SheetDocuments } from '../../data';
+import { DocumentListContainer, DocumentItem, SheetListContainer } from './styles';
+
+interface SheetListProps {
+  sheets: Sheet[];
+}
 
 interface SheetDocumentProps {
   data: SheetDocuments;
 }
+
+export const SheetList = ({
+  sheets,
+}: SheetListProps) => {
+  return (
+    <SheetListContainer>
+      {sheets.map((sheet) => {
+        return (
+          <div key={sheet.key} className="sheet-item">
+            <a
+              href={sheet.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {sheet.title}
+            </a>
+          </div>
+        );
+      })}
+    </SheetListContainer>
+  );
+};
 
 export const DocumentList = ({
   data,
@@ -14,21 +40,7 @@ export const DocumentList = ({
         return (
           <DocumentItem key={document.key}>
             <div className="document-title">{document.title}</div>
-            <div className="sheets">
-              {document.sheets.map((sheet) => {
-                return (
-                  <div key={sheet.key} className="sheet-item">
-                    <a
-                      href={sheet.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {sheet.title}
-                    </a>
-                  </div>
-                );
-              })}
-            </div>
+            <SheetList sheets={document.sheets} />
           </DocumentItem>
         );
       })}

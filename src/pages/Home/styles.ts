@@ -74,6 +74,10 @@ export const HomePage = styled.div`
     margin: 80px 0 20px;
   }
   
+  .no-more-hint {
+    color: #ffffff;
+  }
+  
   .video-list {
     width: 100%;
     box-sizing: border-box;

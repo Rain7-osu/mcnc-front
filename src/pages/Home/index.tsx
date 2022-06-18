@@ -22,7 +22,7 @@ export function Home() {
     },
   );
 
-  const { data: list, loadMore } = useInfiniteScroll(
+  const { data: list, loadMore, noMore } = useInfiniteScroll(
     (currentData) => {
       if (!data) {
         return Promise.resolve({
@@ -77,17 +77,25 @@ export function Home() {
       </Button>
       <div className="recent-video">近期视频</div>
       {list && <VideoList videos={list?.list} />}
-      <Button
-        className="load-more-button"
-        disableElevation
-        variant="contained"
-        size="small"
-        onClick={() => {
-          loadMore();
-        }}
-      >
-        加载更多
-      </Button>
+      {noMore
+        ? (
+          <div className="no-more-hint">
+            已经到底了~
+          </div>
+        )
+        : (
+          <Button
+            className="load-more-button"
+            disableElevation
+            variant="contained"
+            size="small"
+            onClick={() => {
+              loadMore();
+            }}
+          >
+            加载更多
+          </Button>
+        )}
     </HomePage>
   );
 }
