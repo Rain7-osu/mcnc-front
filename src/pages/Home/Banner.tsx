@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useRafInterval } from 'ahooks';
+import { useInterval } from 'ahooks';
 import cls from 'classnames';
 import { BANNER_INTERVAL } from '../../common/constants';
 import { BannerWrapper } from './styles';
@@ -15,29 +15,44 @@ const bannerList = [
 export const Banner = () => {
   const [index, setIndex] = useState<number>(0);
 
-  useRafInterval(() => {
+  useInterval(() => {
     setIndex((index + 1) % bannerList.length);
   }, BANNER_INTERVAL);
 
   return (
     <BannerWrapper>
-      {
-        bannerList.map((img, i) => (
-          <img
+      <div className="img-container">
+        {
+          bannerList.map((img, i) => (
+            <img
+              key={img}
+              className={cls('shown-img', {
+                'show': index === i,
+              })}
+              src={bannerList[i]}
+              alt="banner"
+            />
+          ))
+        }
+        <img
+          className="placeholder-img"
+          src={bannerList[0]}
+          alt="banner"
+        />
+      </div>
+      <div className="buttons">
+        {bannerList.map((img, i) => (
+          <div
             key={img}
-            className={cls('shown-img', {
-              'show': index === i,
+            className={cls('check-button', {
+              'active': index === i,
             })}
-            src={bannerList[i]}
-            alt="banner"
+            onClick={() => {
+              setIndex(i);
+            }}
           />
-        ))
-      }
-      <img
-        className="placeholder-img"
-        src={bannerList[0]}
-        alt="banner"
-      />
+        ))}
+      </div>
     </BannerWrapper>
   );
 };

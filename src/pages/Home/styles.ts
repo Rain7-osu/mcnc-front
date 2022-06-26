@@ -4,22 +4,50 @@ export const BannerWrapper = styled.div`
   width: 100%;
   position: relative;
   
-  img.shown-img {
+  .img-container {
     width: 100%;
-    position: absolute;
-    top: 0;
-    background-size: 100% 100%;
-    transition: opacity .5s ease-out;
-    opacity: 0;
-    
-    &.show {
-      opacity: 1;
+    position: relative;
+
+    img.shown-img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background-size: 100% 100%;
+      transition: opacity .5s ease-out;
+      opacity: 0;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+
+    img.placeholder-img {
+      width: 100%;
+      opacity: 0;
     }
   }
   
-  img.placeholder-img {
-    width: 100%;
-    opacity: 0;
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    
+    .check-button {
+      width: 10px;
+      height: 10px;
+      background-color: #a0a0a0;
+      border-radius: 5px;
+      
+      &.active {
+        background-color: #e9e9e9;
+      }
+      
+      &:hover {
+        background-color: #ffffff;
+        cursor: pointer;
+      }
+    }
   }
 `;
 
