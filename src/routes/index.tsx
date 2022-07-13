@@ -4,6 +4,7 @@ import { Register } from '../pages/Register';
 import { CurrentCompetition } from '../pages/CurrentCompetition';
 import { StatisticSheet } from '../pages/StatisticSheet';
 import { HistoryCompetition } from '../pages/HistoryCompetition';
+import { Tryout } from '../pages/Tryout';
 import { Layout } from './Layout';
 
 export const Routes = () => {
@@ -15,6 +16,7 @@ export const Routes = () => {
           <Route path="/register" component={Register} />
           <Route path="/competition/current" component={CurrentCompetition} />
           <Route path="/competition/history" component={HistoryCompetition} />
+          <Route path="/tryout" component={Tryout} />
           <Route path="/sheet" component={StatisticSheet} />
           <Redirect to="/home" />
         </Switch>

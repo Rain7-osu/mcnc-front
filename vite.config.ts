@@ -15,7 +15,7 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     minify,
-    outDir: 'dist',
+    outDir: '../mcnc-front-release/dist',
   },
   server: {
     port: 10586,
