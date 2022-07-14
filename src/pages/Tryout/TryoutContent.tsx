@@ -12,7 +12,11 @@ const TryoutMaps = () => {
           <React.Fragment key={item.id}>
             <CP><B>{item.label}</B></CP>
             <CP>
-              <TryoutMapItem href={item?.url} target="_blank">{item?.name}</TryoutMapItem>
+              {
+                item.url
+                  ? <TryoutMapItem href={item?.url} target="_blank">{item?.name}</TryoutMapItem>
+                  : item.name
+              }
             </CP>
           </React.Fragment>
         );
