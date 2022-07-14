@@ -11,3 +11,10 @@ export interface Document {
 }
 
 export type SheetDocuments = Document[];
+
+export interface TryoutMap {
+  label: string;
+  name: string;
+  url: string;
+  id: number;
+}
