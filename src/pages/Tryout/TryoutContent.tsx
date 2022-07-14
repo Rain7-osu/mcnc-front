@@ -1,10 +1,18 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { B, CP, TryoutContainer, TryoutMapItem } from './styles';
+import { TryoutMap } from '../../data';
 import { useTryoutMaps } from './useTryoutMaps';
+import { B, CP, TryoutContainer, TryoutMapItem } from './styles';
 
 const TryoutMaps = () => {
   const tryoutMaps = useTryoutMaps();
+
+  const renderItem = (item: TryoutMap) => {
+    return item.url
+      ? <TryoutMapItem href={item?.url} target="_blank">{item?.name}</TryoutMapItem>
+      : item.name;
+  };
+
   return (
     <>
       {tryoutMaps.map(item => {
@@ -12,12 +20,9 @@ const TryoutMaps = () => {
           <React.Fragment key={item.id}>
             <CP><B>{item.label}</B></CP>
             <CP>
-              {
-                item.url
-                  ? <TryoutMapItem href={item?.url} target="_blank">{item?.name}</TryoutMapItem>
-                  : item.name
-              }
+              {renderItem(item)}
             </CP>
+            {item?.children && item.children.map(subItem => <CP key={subItem.id}>{renderItem(subItem)}</CP>)}
           </React.Fragment>
         );
       })}

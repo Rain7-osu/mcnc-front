@@ -17,4 +17,5 @@ export interface TryoutMap {
   name: string;
   url: string;
   id: number;
+  children?: TryoutMap[];
 }
