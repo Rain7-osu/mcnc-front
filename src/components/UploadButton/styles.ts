@@ -1,29 +1,36 @@
 import styled from 'styled-components';
+import { Button } from '@mui/material';
 
-export const DocumentItem = styled.div`
-  margin: 15px 0;
-  
-  .document-title {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-`;
-
-export const DocumentListContainer = styled.div`
-  width: 100%;
-  margin-top: 25px;
-`;
-
-export const SheetListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  .sheet-item {
-    margin: 2px 0;
-
-    a {
-      color: hsl(333, 40%, 80%);
+export const Container = styled(Button)<{ component: 'label' }>`
+  &.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #24222a;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    
+    &:hover {
+      background-color: #302E38;
     }
+  }
+  
+  &:hover {
+    cursor: pointer;  
+  }
+  
+  .title {
+    font-size: 16px;
+    margin: 20px;
+  }
+  
+  .desc {
+    font-size: 14px;
+    margin: 20px;
   }
 `;

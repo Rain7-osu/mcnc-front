@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Nav, Header, NavList, NavItem } from './styles';
+import { Header, Nav, NavItem, NavList } from './styles';
 
 export const Navigator = () => {
   return (
@@ -17,6 +17,9 @@ export const Navigator = () => {
           </NavItem>
           <NavItem>
             <NavLink to="/tryout">Tryout</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/tryout/upload">Tryout 上传</NavLink>
           </NavItem>
         </NavList>
       </Nav>
