@@ -18,7 +18,7 @@ export const SheetList = ({
         return (
           <div key={sheet.key} className="sheet-item">
             <a
-              href={sheet.url}
+              href={`/sheet?src=${sheet.url}`}
               target="_blank"
               rel="noreferrer"
             >

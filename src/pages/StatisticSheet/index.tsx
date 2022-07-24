@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router';
+import { Container } from './styles';
 
 export const StatisticSheet = () => {
   const location = useLocation();
@@ -6,8 +7,8 @@ export const StatisticSheet = () => {
   const src = params.get('src');
 
   return (
-    <>
-      {src && <iframe src={src} width={960} height={960} />}
-    </>
+    <Container>
+      {src && <iframe src={src} />}
+    </Container>
   );
 };
