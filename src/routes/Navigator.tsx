@@ -18,9 +18,9 @@ export const Navigator = () => {
           <NavItem>
             <NavLink to="/tryout">Tryout</NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink to="/tryout/upload">Tryout 上传</NavLink>
-          </NavItem>
+          {/*<NavItem>*/}
+          {/*  <NavLink to="/tryout/upload">Tryout 上传</NavLink>*/}
+          {/*</NavItem>*/}
         </NavList>
       </Nav>
     </Header>
