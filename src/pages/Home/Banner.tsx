@@ -6,6 +6,7 @@ import { BANNER_INTERVAL } from '../../common/constants';
 import { BannerWrapper } from './styles';
 
 const bannerList = [
+  'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/7k2023.png',
   'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/4k2022.png',
   'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/7k2022.png',
   'https://mcnc-1305818561.cos.ap-shanghai.myqcloud.com/2021.png',

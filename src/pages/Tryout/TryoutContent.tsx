@@ -35,7 +35,7 @@ export const TryoutContent = () => {
   return (
     <TryoutContainer>
       <h1>
-        osu!mania 4k world cup 2022 China Team Tryout Results
+        osu!mania 4k world cup 2022 China Team Tryout
       </h1>
       <h2>
         摘要
@@ -50,7 +50,7 @@ export const TryoutContent = () => {
         如果有任何细节方面的问题欢迎联系我：<a href="mailto:xz1z1z1z1z1z@gmail.com">xz1z1z1z1z1z@gmail.com</a>, <a href="mailto:673720875@qq.com">673720875@qq.com</a>.
       </p>
       <br />
-      <CP><a href="https://mcnc.crzteam.cn/sheet?src=https://mcnc.crzteam.cn/static/mwc-4k-2022-cn-team-tryout-skill-assess.html"><h3>osu!mania 4k world cup 2022 China Team Tryout</h3></a></CP>
+      <CP><a href="https://mcnc.crzteam.cn/sheet?src=https://mcnc.crzteam.cn/static/mwc-4k-2022-cn-team-tryout-skill-assess.html"><h3>osu!mania 4k world cup 2022 China Team Tryout Results</h3></a></CP>
       <br />
       <CP><B>时刻表</B></CP>
       <CP><B>公布一轮图池</B> 2022-7-15</CP>
