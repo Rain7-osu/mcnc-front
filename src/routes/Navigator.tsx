@@ -16,6 +16,9 @@ export const Navigator = () => {
             <NavLink to="/competition/history">往期赛事</NavLink>
           </NavItem>
           <NavItem>
+            <NavLink to="/competition/hoc">HOC</NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink to="/tryout">Tryout</NavLink>
           </NavItem>
           {/*<NavItem>*/}

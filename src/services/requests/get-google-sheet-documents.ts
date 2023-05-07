@@ -25,6 +25,12 @@ export const getGoogleSheetDocuments = async (): Promise<SheetDocuments> => {
   return transformSheetDocuments(data.data);
 };
 
+export const getHOCSheetDocuments = async (): Promise<SheetDocuments> => {
+  const res = await request.get('/api/hoc_sheet_urls');
+  const data = transformResponse(res);
+  return transformSheetDocuments(data.data);
+};
+
 export const getCurrentGoogleSheets = async (): Promise<SheetDocuments> => {
   const res = await request.get('/api/current_google_sheet');
   const data = transformResponse(res);
