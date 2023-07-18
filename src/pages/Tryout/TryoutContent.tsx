@@ -59,7 +59,7 @@ const resolveBeautifulContent = (content: TryoutLine[]): ReactNode[] => {
     return c.map((item) => {
       const resolver = resolveBaseMap[item.type] || resolveBaseMap.p;
       if (typeof item.content === 'string') {
-        return <React.Fragment key={item.key}>{resolver(item.content)}</React.Fragment>;
+        return <React.Fragment key={item.key}>{resolver(item.content, item.props)}</React.Fragment>;
       }
 
       const node = resolve(item.content);
