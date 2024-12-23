@@ -7,6 +7,7 @@ export const BannerWrapper = styled.div`
   .img-container {
     width: 100%;
     position: relative;
+    overflow: hidden;
 
     img.shown-img {
       width: 100%;

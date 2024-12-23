@@ -4,7 +4,7 @@ import { Button, Snackbar } from '@mui/material';
 import { REGISTER_LINK } from '../../common/constants';
 import { ConfigKeys } from '../../common/config-keys';
 import { openTab } from '../../utils/open-tab';
-import { useSwitchConfig } from '../../hooks/useConfig';
+import { useConfig, useSwitchConfig } from '../../hooks/useConfig';
 import { getVideoLink } from '../../services/requests/get-video-link';
 import { VideoList } from './VideoList';
 import { Banner } from './Banner';
@@ -14,6 +14,7 @@ export function Home() {
   const [open, { setTrue, setFalse }] = useBoolean();
   const [message, setMessage] = useState('');
   const enableRegister = useSwitchConfig(ConfigKeys.ENABLE_REGISTERING);
+  const registerLink = useConfig(ConfigKeys.REGISTER_LINK);
 
   const { data } = useRequest(
     getVideoLink,
@@ -74,7 +75,7 @@ export function Home() {
           variant="contained"
           size="medium"
           onClick={() => {
-            openTab(REGISTER_LINK);
+            openTab(registerLink || REGISTER_LINK);
           }}
         >
           报名链接
