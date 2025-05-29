@@ -17,7 +17,7 @@ export const Routes = () => {
           <Route exact path="/register" component={Register} />
           <Route exact path="/competition/current" component={CurrentCompetition} />
           <Route exact path="/competition/history" component={HistoryCompetition} />
-          <Route exact path="/competition/hoc" component={HOC} />
+          <Route exact path="/competition/lan" component={HOC} />
           {/*<Route exact path="/tryout/upload" component={UploadTryout} />*/}
           <Route exact path="/tryout" component={Tryout} />
           <Route exact path="/sheet" component={StatisticSheet} />

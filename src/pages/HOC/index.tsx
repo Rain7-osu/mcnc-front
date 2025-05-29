@@ -27,7 +27,7 @@ export const HOC = () => {
         onClose={setFalse}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
       />
-      <div className="page-title">HOC</div>
+      <div className="page-title">LAN</div>
       <DocumentList data={sheetDocuments || []} />
     </Page>
   );
