@@ -24,8 +24,8 @@ export const Header = styled.header`
 `;
 
 export const ImgWrap = styled.div`
-  height: 56px;
-  margin-top: 2px;
+  height: 36px;
+  margin-right: 20px;
   
   img {
     width: 100%;
