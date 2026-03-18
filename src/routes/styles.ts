@@ -23,7 +23,18 @@ export const Header = styled.header`
   background-color: #5639ac;
 `;
 
+export const ImgWrap = styled.div`
+  height: 56px;
+  margin-top: 2px;
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 export const Nav = styled.nav`
+  width: 960px;
   max-width: 1000px;
   height: 60px;
   margin: 0 auto;

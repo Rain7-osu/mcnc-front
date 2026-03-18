@@ -1,13 +1,17 @@
 import { NavLink } from 'react-router-dom';
-import { Header, Nav, NavItem, NavList } from './styles';
+import img from './mcnc.png';
+import { Header, ImgWrap, Nav, NavItem, NavList } from './styles';
 
 export const Navigator = () => {
   return (
     <Header>
       <Nav>
         <NavList>
+          <ImgWrap>
+            <img alt="mcnc" src={img} />
+          </ImgWrap>
           <NavItem>
-            <NavLink to="/home">MCNC 官网</NavLink>
+            <NavLink to="/home">首页</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to="/competition/current">本期赛事</NavLink>
